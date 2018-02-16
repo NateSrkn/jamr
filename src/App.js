@@ -4,21 +4,24 @@ import './styles/App.css';
 import './styles/player-bar.css';
 import './styles/song-list.css';
 import './styles/album.css';
-import './styles/library.css'
+import './styles/library.css';
+import './styles/landing.css';
+import './styles/css-reset.css';
 import Landing from './components/Landing';
 import Library from './components/Library';
 import Album from './components/Album';
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header>
-          <h1>Bloc Jams</h1>
-          <nav class="left">
+        <nav>
+          <h1 className="title"><Link to='/'>BLOC JAMS</Link></h1>
             <ul id="navbar">
-              <li class="link"><Link to='/'>Landing</Link></li>
-              <li class="link"><Link to='/library'>Library</Link></li>
+             
+              <li className="link"><Link to='/library'>Library</Link></li>
             </ul>
           </nav>
         </header>
