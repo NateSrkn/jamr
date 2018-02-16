@@ -1,0 +1,36 @@
+.album {
+  display:grid;
+}
+
+#album-info {
+  margin-left:15%;
+  display:grid;
+  grid-gap:30px;
+  grid-template-columns:400px;
+}
+
+#album-cover-art {
+  height:400px;
+  width:400px;
+  grid-column:1;
+}
+
+.album-details {
+  grid-column:2;
+}
+
+#album-title {
+  font-size:3em;
+  padding-bottom:5px;
+}
+
+.artist {
+  font-size:2em;
+  font-weight:normal;
+  padding-bottom:10px;
+}
+
+#release-info {
+  font-size:1em;
+  padding-bottom:10px;
+}

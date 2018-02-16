@@ -1,0 +1,60 @@
+.library {
+    display:grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-gap:100px;
+    margin-left:10%
+}
+
+#album-art-libary {
+    height: 300px;
+    width: 300px;
+}
+
+
+.container {
+    position:relative;
+    width:100%;
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+
+  }
+
+  .container:hover .overlay {
+    opacity: 1;
+  }
+
+  .container:hover img {
+      opacity:.5;
+  }
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .album-title {
+      font-weight:bolder;
+      margin-bottom:15px;
+      font-size:2em;
+  }
+
+  .album-artist {
+      font-weight:lighter;
+      font-size:1em;
+  }
