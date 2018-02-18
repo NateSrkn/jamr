@@ -1,16 +1,56 @@
 .library {
-   display:grid;
-   grid-template-columns: 300px 300px 300px 300px;
-   grid-gap:100px;
-   margin-left:15%;
-   margin-top:10%;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-gap:75px;
+    margin-left:50px;
+    margin-top:150px;
 }
 
-a:hover, a:focus, a:active, a:link {
-    text-decoration: none;
-    
+/* Hover Effect for Albums */
+.container {
+    position: relative;
 }
-#album-art-libary {
-    height: 300px;
-    width: 300px;
+
+#album-art-library {
+    height:300px;
+    width:300px;
+    display:block;
+}
+
+.overlay {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    opacity:0;
+    height:100%;
+    width:100%;
+    transition:.4s ease;
+}
+.container:hover #album-art-library {
+    opacity:.5;
+}
+.container:hover .overlay {
+    opacity:1;
+}
+
+.text {
+ 
+    margin-top:40%;
+    text-align:center;
+}
+
+/* End of hover */
+
+.album-title {
+    font-size:2em;
+    font-weight:bolder;
+    padding-bottom:20px;
+}
+
+.album-artist {
+    font-weight:lighter;
+    font-size:1.2em;
+    padding-bottom:5px;
 }

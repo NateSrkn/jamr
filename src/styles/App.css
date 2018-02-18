@@ -1,33 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+
+* {
+  margin:0;
+  padding:0;
+}
+
+::-webkit-scrollbar { 
+  display: none; 
+}
+
 body {
-  background: rgb(31, 30, 30);
-  margin: 0;
+  background:#121420;
+  color:white;
+  font-family:'Work Sans', sans-serif
+  
 }
 
-header {
-  height:200px;
-  text-align:left; 
-  height: 100%;
-  width:15%;
-  top:0;
-  position:fixed;
-}
-
-body, header, nav, a {
+Link, a {
+  text-decoration:none;
   color:white;
 }
 
-.left {
-  width: 20%;
-  float: left;
-}
-.navbar {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.link {    
-  margin: 1px 0;
-  border: 1px solid #999;
-  list-style:none;
+header {
+  display:grid;
+  height:50px;
 }
 
+.logo {
+  font-size:3.5em;
+  margin-left:2%;
+  margin-top:20px;
+  grid-column:1;
+  letter-spacing: 3px;
+}
+
+#navbar {
+  float:right;
+  margin-top:-25px;
+  margin-right:100px;
+  grid-column:2;
+  font-size:1.2em;
+}
