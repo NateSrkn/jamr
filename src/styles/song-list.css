@@ -20,31 +20,11 @@ tr {
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
   background: hsla(0, 0%, 0%, 0.01);
   transition: all 0.2s ease;
+  cursor:pointer;
 }
 
 tr:last-child {
   border:none;
-}
-
-
-tr .ion-play,
-tr .ion-pause,
-tr:hover .song-number {
-  display:none;
-}
-
-tr:hover .ion-play {
-  display:block;
-}
-
-tr button,
-tr:focus button {
-  border:none;
-  background:none;
-  cursor:pointer;
-  color:white;
-  padding:0;
-  outline:none;
 }
 
 td{
@@ -66,4 +46,21 @@ td{
 
 .spacer {
   height:200px;
+}
+
+tr button {
+  border:none;
+  background:none;
+  color:white;
+  cursor:pointer;
+  padding:0;
+}
+
+tr:hover .song-index,
+#hover.ion-play {
+  display:none;
+}
+
+tr:hover #hover.ion-play {
+  display:block;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import TableButton from './TableButton';
 
 class Album extends Component {
     constructor(props) {
@@ -15,7 +16,6 @@ class Album extends Component {
             duration: album.songs[0].duration,
             isPlaying: false
         }
-
         this.audioElement = document.createElement('audio');
         this.audioElement.src = album.songs[0].audioSrc;
     }
@@ -94,6 +94,8 @@ class Album extends Component {
     }
 
 
+
+
     formatTime(time) {
         return time ? `${Math.floor(time / 60)}:${Number(time % 60 / 100).toFixed(2).substr(2,3)}` : '-:--'
     }
@@ -117,13 +119,14 @@ class Album extends Component {
                     </colgroup>
                     <tbody>
                         {this.state.album.songs.map((song,index) => 
-                            <tr className={song} key={index} onClick={() => this.handleSongClick(song)}>
+                            <tr key={index} onClick={() => this.handleSongClick(song)}>
                                 <td>
-                                    <button>
-                                        <span className="song-number">{index + 1}</span>
-                                        <span className="ion-play"></span>
-                                        <span className="ion-pause"></span>
-                                    </button>
+                                    <TableButton
+                                        isPlaying={this.state.isPlaying}
+                                        currentSong={this.state.currentSong}
+                                        songIndex={index}
+                                        buttonOf={song}
+                                    />
                                 </td>
                                 <td className="song-title">{song.title}</td>
                                 <td className="song-duration">{this.formatTime(song.duration)}</td>
@@ -131,7 +134,7 @@ class Album extends Component {
                         )}
                     </tbody>
                 </table>
-                <div class="spacer">
+                <div className="spacer">
                     &nbsp;
                 </div>
                 <PlayerBar 

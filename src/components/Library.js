@@ -17,9 +17,9 @@ class Library extends Component {
                             <img id="album-art-library" src={album.albumCover} alt={album.title} />
                             <div className="overlay">
                                 <div className="text">
-                                    <div class="album-title">{album.title}</div>
-                                    <div class="album-artist">{album.artist}</div>
-                                    <div class="song-count">{album.songs.length} songs </div>
+                                    <div className="album-title">{album.title}</div>
+                                    <div className="album-artist">{album.artist}</div>
+                                    <div className="song-count">{album.songs.length} songs </div>
                                 </div>
                             </div>
                         </Link>
