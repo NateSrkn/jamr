@@ -1,60 +1,56 @@
 .library {
     display:grid;
-    grid-template-columns: 300px 300px 300px 300px;
-    grid-gap:100px;
-    margin-left:10%
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-gap:75px;
+    margin-left:50px;
+    margin-top:150px;
 }
 
-#album-art-libary {
-    height: 300px;
-    width: 300px;
-}
-
-
+/* Hover Effect for Albums */
 .container {
-    position:relative;
-    width:100%;
+    position: relative;
 }
 
+#album-art-library {
+    height:300px;
+    width:300px;
+    display:block;
+}
 
 .overlay {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .3s ease;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    opacity:0;
+    height:100%;
+    width:100%;
+    transition:.4s ease;
+}
+.container:hover #album-art-library {
+    opacity:.5;
+}
+.container:hover .overlay {
+    opacity:1;
+}
 
-  }
+.text {
+ 
+    margin-top:40%;
+    text-align:center;
+}
 
-  .container:hover .overlay {
-    opacity: 1;
-  }
+/* End of hover */
 
-  .container:hover img {
-      opacity:.5;
-  }
-  .text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  }
+.album-title {
+    font-size:2em;
+    font-weight:bolder;
+    padding-bottom:20px;
+}
 
-  .album-title {
-      font-weight:bolder;
-      margin-bottom:15px;
-      font-size:2em;
-  }
-
-  .album-artist {
-      font-weight:lighter;
-      font-size:1em;
-  }
+.album-artist {
+    font-weight:lighter;
+    font-size:1.2em;
+    padding-bottom:5px;
+}

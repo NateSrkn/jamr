@@ -1,75 +1,34 @@
 #song-list {
-  margin-left: 15%;
-  border-collapse: collapse;
-  clear: both;
-  font-weight: 100;
-  margin-top: 2rem;
-  overflow: hidden;
-  width: 75%;
-  font-size: 17px;
+  border-collapse:collapse;
+  clear:both;
+  font-weight:100;
+  overflow:hidden;
+  width:96%;
+  margin-top:20px;
+  margin-left:2%;
 }
 
 #song-number-column {
-  width: 40px;
+  width:40px;
 }
 
 #song-duration-column {
-  width: 80px;
+  width:80px;
 }
 
 tr {
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
   background: hsla(0, 0%, 0%, 0.01);
   transition: all 0.2s ease;
+  cursor:pointer;
 }
 
-tr:focus {
-  outline: aliceblue;
+tr:last-child {
+  border:none;
 }
 
-tr:hover .ion-play {
-  display: block;
-}
-
-tr .ion-play,
-tr .ion-pause,
-tr:hover .song-number {
-  display: none;
-}
-
-tr:hover {
-  background: hsla(0, 0%, 0%, 0.05);
-  cursor: pointer;
-}
-
-tr:hover .song-title {
-  color: hsla(0, 0%, 100%, 1);
-}
-
-td {
+td{
   padding: 0.75rem;
-}
-
-tr button {
-  border: none;
-  background: none;
-  color: white;
-  cursor: pointer;
-  padding: 2px;
-  font-size: 17px;
-}
-
-tr button:focus {
-  outline: none;
-  text-shadow: 2px 4px 3px hsla(0, 0%, 0%, 0.25);
-}
-
-tr button:focus .song-number {
-  display: none;
-}
-
-tr button:focus .ion-play {
-  display: block;
 }
 
 .song-number {
@@ -81,11 +40,27 @@ tr button:focus .ion-play {
 }
 
 .song-duration {
-  color: hsla(0, 0%, 100%, 0.5);
+  color: hsla(0, 0%, 100%, 0.5);  
   text-align: right;
 }
 
 .spacer {
-  width: 100%;
-  height: 200px;
+  height:200px;
+}
+
+tr button {
+  border:none;
+  background:none;
+  color:white;
+  cursor:pointer;
+  padding:0;
+}
+
+tr:hover .song-index,
+#hover.ion-play {
+  display:none;
+}
+
+tr:hover #hover.ion-play {
+  display:block;
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import TableButton from './TableButton';
 
 class Album extends Component {
     constructor(props) {
@@ -15,7 +16,6 @@ class Album extends Component {
             duration: album.songs[0].duration,
             isPlaying: false
         }
-
         this.audioElement = document.createElement('audio');
         this.audioElement.src = album.songs[0].audioSrc;
     }
@@ -110,11 +110,15 @@ class Album extends Component {
         });
     }
 
+
     handleVolumeChange(e) {
-        const newVolume = e.target.value;
-        this.audioElement.volume = newVolume;
-        this.setState({volume: newVolume});
+       const newVolume = e.target.value;
+       this.audioElement.volume = newVolume;
+       this.setState({ volume: newVolume });
     }
+
+
+
 
     formatTime(time) {
         return time
@@ -142,24 +146,22 @@ class Album extends Component {
                         <col id="song-duration-column"/>
                     </colgroup>
                     <tbody>
-                        {this
-                            .state
-                            .album
-                            .songs
-                            .map((song, index) => <tr className={song} key={index} onClick={() => this.handleSongClick(song)}>
+                        {this.state.album.songs.map((song,index) => 
+                            <tr key={index} onClick={() => this.handleSongClick(song)}>
                                 <td>
-                                    <button>
-                                        <span className="song-number">{index + 1}</span>
-                                        <span className="ion-play"></span>
-                                        <span className="ion-pause"></span>
-                                    </button>
+                                    <TableButton
+                                        isPlaying={this.state.isPlaying}
+                                        currentSong={this.state.currentSong}
+                                        songIndex={index}
+                                        buttonOf={song}
+                                    />
                                 </td>
                                 <td className="song-title">{song.title}</td>
                                 <td className="song-duration">{this.formatTime(song.duration)}</td>
                             </tr>)}
                     </tbody>
                 </table>
-                <div class="spacer">
+                <div className="spacer">
                     &nbsp;
                 </div>
                 <PlayerBar
@@ -172,7 +174,8 @@ class Album extends Component {
                     handlePrevClick={() => this.handlePrevClick()}
                     handleNextClick={() => this.handleNextClick()}
                     handleTimeChange={(e) => this.handleTimeChange(e)}
-                    handleVolumeChange={(e) => this.handleVolumeChange(e)}/>
+                    handleVolumeChange={(e) => this.handleVolumeChange(e)}
+                 />
             </section>
         )
     }

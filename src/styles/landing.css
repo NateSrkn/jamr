@@ -1,15 +1,18 @@
 .landing {
-    margin-top:40px
-}
-.point-title {
     font-size:6em;
+}
+
+.selling-points {
+    margin-top:100px;
+}
+
+.point-title {
+    padding-bottom:20px;
+    padding-top:20px;
 }
 
 .point-description {
-    font-size:6em;
-    padding:10px;
     color:#121420;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color:white;
+    -webkit-text-stroke-color: white
 }
-
