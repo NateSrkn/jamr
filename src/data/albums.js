@@ -79,32 +79,5 @@ export default
           {title: "End", duration: "139", audioSrc: '/assets/music/blue.mp3' }
           
       ]
-  },
-  {
-    title: "channel Orange",
-    artist: "Frank Ocean",
-    releaseInfo: "2012 East West",
-    albumCover: '/assets/images/album_covers/05.jpg',
-    slug: 'channel-Orange',
-    songs: [
-        {title: "Start", duration: "46", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Thinkin Bout You", duration: "201", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Fertilizer", duration: "40", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Sierra Leone", duration: "149", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Sweet Life", duration: "263", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Not Just Money", duration: "60", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Super Rich Kids", duration: "306", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Pilot Jones", duration: "184", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Crack Rock", duration: "224", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Pyramids", duration: "593", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Lost", duration: "234", audioSrc: '/assets/music/blue.mp3' },
-        {title: "White", duration: "76", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Monks", duration: "200", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Bad Religion", duration: "175", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Pink Matter", duration: "269", audioSrc: '/assets/music/blue.mp3' },
-        {title: "Forrest Gump", duration: "195", audioSrc: '/assets/music/blue.mp3' },
-        {title: "End", duration: "139", audioSrc: '/assets/music/blue.mp3' }
-        
-    ]
-}
-];
+  }
+]
