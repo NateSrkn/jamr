@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+
+* {
+  margin:0;
+  padding:0;
+}
+
+::-webkit-scrollbar { 
+  display: none; 
+}
+
+body {
+  background:#121420;
+  color:white;
+  font-family:'Work Sans', sans-serif
+  
+}
+
+Link, a {
+  text-decoration:none;
+  color:white;
+}
+
+header {
+  display:grid;
+  height:50px;
+}
+
+.logo {
+  font-size:3.5em;
+  margin-left:2%;
+  margin-top:20px;
+  grid-column:1;
+  letter-spacing: 3px;
+}
+
+#navbar {
+  float:right;
+  margin-top:-25px;
+  margin-right:100px;
+  grid-column:2;
+  font-size:1.2em;
+}
