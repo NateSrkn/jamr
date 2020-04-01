@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Image } from './Image'
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
 
-class Album extends Component {
+class Album extends React.Component {
     constructor(props) {
         super(props);
         const album = albumData.find( album => {
@@ -95,20 +96,20 @@ class Album extends Component {
 
 
     formatTime(time) {
-        return time ? `${Math.floor(time / 60)}:${Number(time % 60 / 100).toFixed(2).substr(2,3)}` : '-:--'
+        return time ? `${Math.floor(time / 60)}:${Number(time % 60 / 100).toFixed(2).substr(2,3)}` : '0:00'
     }
 
     render() {
         return (
-            <section className="album">
-                <section id="album-info">
-                    <img id="album-cover-art" src={this.state.album.albumCover} alt="Album Cover" />
-                    <div className="album-details">
-                        <h1 id="album-title">{this.state.album.title}</h1>
-                        <h2 className="artist">{this.state.album.artist}</h2>
-                        <div id="release-info">{this.state.album.releaseInfo}</div>
-                    </div>
-                </section>
+            <div className="album">
+                <div className="album-hero">
+                 <Image albumPage src={this.state.album.albumCover} alt={this.state.album.title} />
+                 <div className="album-info">
+                     <h3>{this.state.album.title}</h3>
+                     <h4><span className="sub-info">By</span> {this.state.album.artist}</h4>
+                     <div className="sub-info">{this.state.album.releaseInfo}</div>
+                 </div>
+             </div>
                 <table id="song-list">
                     <colgroup>
                         <col id="song-number-column" />
@@ -131,7 +132,7 @@ class Album extends Component {
                         )}
                     </tbody>
                 </table>
-                <div class="spacer">
+                <div className="spacer">
                     &nbsp;
                 </div>
                 <PlayerBar 
@@ -146,7 +147,7 @@ class Album extends Component {
                     handleTimeChange={(e) => this.handleTimeChange(e)}
                     handleVolumeChange={(e) => this.handleVolumeChange(e)}
                  />
-            </section>
+            </div>
         )
     }
 }

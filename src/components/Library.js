@@ -1,34 +1,36 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { Image } from './Image'
 import { Link } from 'react-router-dom';
 import albumData from './../data/albums';
+import styled from 'styled-components'
 
-class Library extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { albums: albumData };
-    }
-    render() {
-        return (
-            <section className="library">
-              {
-                  this.state.albums.map(( album, index ) =>
-                  <div className="container">
-                        <Link to={`/album/${album.slug}`} key = {index}>
-                            <img id="album-art-library" src={album.albumCover} alt={album.title} />
-                            <div className="overlay">
-                                <div className="text">
-                                    <div class="album-title">{album.title}</div>
-                                    <div class="album-artist">{album.artist}</div>
-                                    <div class="song-count">{album.songs.length} songs </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                )
-              }
-            </section>
-        );
-    }
+const Container = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+`
+
+const Album = styled.div`
+    margin: 5px;
+    color: white;
+`
+
+const Library = () => {
+    let [albums] = useState(albumData)
+    return (
+        <Container>
+            {albums.map(album => (
+                <Album key={album.slug}>
+                    <Link className="album-link" to={`/album/${album.slug}`}>
+                        <Image className="album-cover" src={album.albumCover} alt={album.title} />
+                        <div className="album-info">
+                            <div className="album-title">{album.title}</div>
+                            <div className="album-artist">{album.artist}</div>
+                            <div className="song-count">{album.songs.length} songs </div>
+                        </div>
+                    </Link>
+                </Album>
+            ))}
+        </Container>
+    )
 }
-
 export default Library;

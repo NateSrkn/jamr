@@ -3,19 +3,20 @@ import React, { Component } from 'react';
 class PlayerBar extends Component {
     render() {
         return (
-            <section className="player-bar">
-                <section id="buttons">
-                    <button id="previous" onClick={this.props.handlePrevClick}>
-                        <span className="ion-skip-backward"></span>
-                    </button>
-                    <button id="play-pause" onClick={this.props.handleSongClick}>
-                        <span className={this.props.isPlaying ? 'ion-pause' : "ion-play"}></span>
-                    </button>
-                    <button id="next" onClick={this.props.handleNextClick}>
-                        <span className="ion-skip-forward"></span>
-                    </button>
-                    </section>
-                    <section id="time-control">
+            <div className="player-bar">
+                <div className="controls">
+                    <div className="buttons">
+                        <button className="previous" onClick={this.props.handlePrevClick}>
+                            <i className="fas fa-backward"></i>
+                        </button>
+                        <button className="play-pause" onClick={this.props.handleSongClick}>
+                            <i className={this.props.isPlaying ? 'fas fa-pause' : "fas fa-play"}></i>
+                        </button>
+                        <button id="next" onClick={this.props.handleNextClick}>
+                            <i className="fas fa-forward"></i>
+                        </button>
+                    </div>
+                    <div className="time">
                         <div className="current-time">{this.props.formatTime(this.props.currentTime)}</div>
                         <input
                             type="range"
@@ -26,22 +27,23 @@ class PlayerBar extends Component {
                             step="0.01"
                             onChange={this.props.handleTimeChange}
                         />
-                       <div className="total-time">{this.props.formatTime(this.props.duration)}</div>
-                    </section>
-                    <section id="volume-control">
-                        <div className="icon ion-volume-low"></div>
-                        <input 
-                            type="range" 
-                            className="seek-bar" 
-                            value={this.props.volume}
-                            min="0"
-                            max="1"
-                            step="0.01"
-                            onChange={this.props.handleVolumeChange}
-                         />
-                        <div className="icon ion-volume-high"></div>
-                    </section>
-            </section>
+                        <div className="total-time">{this.props.formatTime(this.props.duration)}</div>
+                    </div>
+                </div>
+                <div className="volume-control">
+                    <i className="fas fa-volume-down"></i>
+                    <input 
+                        type="range" 
+                        className="seek-bar" 
+                        value={this.props.volume}
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        onChange={this.props.handleVolumeChange}
+                        />
+                    <i className="fas fa-volume-up"></i>
+                </div>
+            </div>
         )
     }
 }

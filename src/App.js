@@ -1,36 +1,40 @@
-import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import './styles/App.css';
-import './styles/player-bar.css';
-import './styles/song-list.css';
-import './styles/album.css';
-import './styles/library.css';
-import './styles/landing.css';
-import './styles/reset.css';
+import React from 'react';
+import { Route, Switch, Link } from 'react-router-dom';
+import './styles/main.scss'
 import Landing from './components/Landing';
 import Library from './components/Library';
 import Album from './components/Album';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header>
-          <h1 className="logo"><Link to='/'>BLOC JAMS</Link></h1>
-          <nav className="left">
-            <ul id="navbar">
-              <li className="link"><Link to='/library'>Library</Link></li>
-            </ul>
+const App = () => {
+  return (
+    <div className="App">
+      <header>
+        <section>
+          <h2>
+              <Link to='/'>
+              Jamr
+              </Link>
+          </h2>
+          <nav>
+            <ol>
+              <li>
+                <Link to='/library'>Library</Link>
+              </li>
+            </ol>
           </nav>
-        </header>
-        <main>
-          <Route exact path="/" component={Landing} />
-          <Route path="/library" component={Library} />
-          <Route path="/album/:slug" component={Album} />
-        </main>
-      </div>
-    );
-  }
+        </section>
+      </header>
+      <main>
+        <section>
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route path="/library" component={Library} />
+            <Route path="/album/:slug" component={Album} />
+          </Switch>
+        </section>
+      </main>
+    </div>
+  )
 }
 
 export default App;
